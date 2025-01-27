@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>TASK:- 1. Create an object using class and inheritance concepts.</h1>
+    <script>
+      class laptops {
+        constructor(brand, ram, rom) {
+          (this.brand = brand), (this.ram = ram), (this.rom = rom);
+        }
+        details() {
+          console.log(`company${this.brand}ram${this.ram}rom${this.rom}`);
+        }
+      }
+      let laptop = new laptops("dell", "16gb", "512ssd");
+      // console.log(laptop.details());
+
+      class dell extends laptops {
+        constructor(brand, ram, rom, color, price) {
+          super(brand, ram, rom);
+          (this.color = color), (this.price = price);
+        }
+        detail() {
+          console.log(
+            `company: ${this.brand} ram: ${this.ram} rom: ${this.rom} color: ${this.color} price: ${this.price}`
+          );
+        }
+      }
+      let laptopdel = new dell("dell", "16gb", "512ssd", "red", "50K");
+      laptopdel.detail();
+      // console.log(laptopdel.detail())
+      // console.log(laptopdel)
+
+      class hp extends laptops {
+        constructor(color, price) {
+          super();
+        }
+        detail() {
+          console.log(
+            `company: ${this.brand} ram: ${this.ram} rom: ${this.rom} color: ${this.color} price: ${this.price}`
+          );
+        }
+      }
+      let laptophp = new dell("hp", "8gb", "512ssd", "white", "70K");
+      laptophp.detail();
+      // console.log(laptophp.detail())
+      // console.log(laptophp)
+    </script>
+  </body>
+</html>
